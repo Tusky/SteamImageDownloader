@@ -57,7 +57,7 @@ def download_library(steam_id):
     try:
         urllib.request.urlretrieve(url, f'{get_app_name(steam_id)}_library.jpg')
     except HTTPError:
-        print(f'Couldn\'t Library image. Downloading Portrait image instead for {get_app_name(steam_id)}')
+        print(f'Couldn\'t find library image for game.\nDownloading Portrait image for {get_app_name(steam_id)}')
         urllib.request.urlretrieve(portrait_url, f'{get_app_name(steam_id)}_portrait.png')
 
 
