@@ -1,4 +1,4 @@
-# SteamImageDownloader
+# Steam Image Downloader
 Downloads library/portrait and header images for given steam ids.
 
 # Usage
