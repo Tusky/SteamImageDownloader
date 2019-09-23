@@ -12,8 +12,10 @@ steam_db = {}
 
 def initialize_db():
     exists = os.path.exists(steam_db_file)
-    created_at = os.path.getmtime(steam_db_file)
-    day_old = datetime.datetime.fromtimestamp(created_at) + datetime.timedelta(hours=24) <= datetime.datetime.now()
+    day_old = False
+    if exists:
+        created_at = os.path.getmtime(steam_db_file)
+        day_old = datetime.datetime.fromtimestamp(created_at) + datetime.timedelta(hours=24) <= datetime.datetime.now()
     if not exists or day_old:
         get_steam_db()
     load_database()
